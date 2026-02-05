@@ -1,0 +1,64 @@
+<div class="flex justify-between items-center mb-8">
+  <div>
+    <h1 class="text-3xl font-bold text-gray-800">Projects</h1>
+    <p class="text-sm text-gray-500 mt-1">
+      Manage and track all your projects
+    </p>
+  </div>
+
+  <button
+    mat-raised-button
+    color="primary"
+    routerLink="create"
+    class="!rounded-lg !px-5 !py-2 shadow-md hover:shadow-lg transition"
+  >
+    <mat-icon class="mr-2">add</mat-icon>
+    New Project
+  </button>
+</div>
+
+<!-- Loading -->
+<div *ngIf="isLoading" class="flex items-center gap-2 text-gray-500">
+  <mat-progress-spinner diameter="24" mode="indeterminate"></mat-progress-spinner>
+  Loading projects...
+</div>
+
+<!-- Error -->
+<div *ngIf="error" class="bg-red-50 text-red-600 p-4 rounded-lg">
+  {{ error }}
+</div>
+
+<!-- Project Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-6">
+  <mat-card
+    *ngFor="let project of projects"
+    class="group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+  >
+    <mat-card-header>
+      <mat-card-title class="text-lg font-semibold">
+        {{ project.name }}
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p class="text-sm text-gray-600 line-clamp-3">
+        {{ project.description || 'No description provided.' }}
+      </p>
+
+      <span
+        class="inline-block mt-4 px-3 py-1 text-xs font-semibold rounded-full"
+        [ngClass]="{
+          'bg-yellow-100 text-yellow-700': project.status === 'Planned',
+          'bg-green-100 text-green-700': project.status === 'Active',
+          'bg-gray-200 text-gray-700': project.status === 'Completed'
+        }"
+      >
+        {{ project.status }}
+      </span>
+    </mat-card-content>
+
+    <mat-card-actions class="justify-end opacity-0 group-hover:opacity-100 transition">
+      <button mat-button color="primary">View</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
