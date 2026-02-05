@@ -1,0 +1,17 @@
+D:\PMS\PMS.Infrastructure\bin\Debug\net8.0\PMS.Infrastructure.deps.json
+D:\PMS\PMS.Infrastructure\bin\Debug\net8.0\PMS.Infrastructure.dll
+D:\PMS\PMS.Infrastructure\bin\Debug\net8.0\PMS.Infrastructure.pdb
+D:\PMS\PMS.Infrastructure\bin\Debug\net8.0\PMS.Domain.dll
+D:\PMS\PMS.Infrastructure\bin\Debug\net8.0\PMS.Domain.pdb
+D:\PMS\PMS.Infrastructure\obj\Debug\net8.0\PMS.Infrastructure.csproj.AssemblyReference.cache
+D:\PMS\PMS.Infrastructure\obj\Debug\net8.0\PMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\PMS\PMS.Infrastructure\obj\Debug\net8.0\PMS.Infrastructure.AssemblyInfoInputs.cache
+D:\PMS\PMS.Infrastructure\obj\Debug\net8.0\PMS.Infrastructure.AssemblyInfo.cs
+D:\PMS\PMS.Infrastructure\obj\Debug\net8.0\PMS.Infrastructure.csproj.CoreCompileInputs.cache
+D:\PMS\PMS.Infrastructure\obj\Debug\net8.0\PMS.Infr.124ECB81.Up2Date
+D:\PMS\PMS.Infrastructure\obj\Debug\net8.0\PMS.Infrastructure.dll
+D:\PMS\PMS.Infrastructure\obj\Debug\net8.0\refint\PMS.Infrastructure.dll
+D:\PMS\PMS.Infrastructure\obj\Debug\net8.0\PMS.Infrastructure.pdb
+D:\PMS\PMS.Infrastructure\obj\Debug\net8.0\ref\PMS.Infrastructure.dll
+D:\PMS\PMS.Infrastructure\bin\Debug\net8.0\PMS.Application.dll
+D:\PMS\PMS.Infrastructure\bin\Debug\net8.0\PMS.Application.pdb

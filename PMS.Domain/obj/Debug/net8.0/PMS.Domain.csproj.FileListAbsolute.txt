@@ -1,0 +1,11 @@
+D:\PMS\PMS.Domain\bin\Debug\net8.0\PMS.Domain.deps.json
+D:\PMS\PMS.Domain\bin\Debug\net8.0\PMS.Domain.dll
+D:\PMS\PMS.Domain\bin\Debug\net8.0\PMS.Domain.pdb
+D:\PMS\PMS.Domain\obj\Debug\net8.0\PMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\PMS\PMS.Domain\obj\Debug\net8.0\PMS.Domain.AssemblyInfoInputs.cache
+D:\PMS\PMS.Domain\obj\Debug\net8.0\PMS.Domain.AssemblyInfo.cs
+D:\PMS\PMS.Domain\obj\Debug\net8.0\PMS.Domain.csproj.CoreCompileInputs.cache
+D:\PMS\PMS.Domain\obj\Debug\net8.0\PMS.Domain.dll
+D:\PMS\PMS.Domain\obj\Debug\net8.0\refint\PMS.Domain.dll
+D:\PMS\PMS.Domain\obj\Debug\net8.0\PMS.Domain.pdb
+D:\PMS\PMS.Domain\obj\Debug\net8.0\ref\PMS.Domain.dll

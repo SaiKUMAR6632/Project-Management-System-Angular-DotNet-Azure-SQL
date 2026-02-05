@@ -1,0 +1,15 @@
+D:\PMS\PMS.Application\bin\Debug\net8.0\PMS.Application.deps.json
+D:\PMS\PMS.Application\bin\Debug\net8.0\PMS.Application.dll
+D:\PMS\PMS.Application\bin\Debug\net8.0\PMS.Application.pdb
+D:\PMS\PMS.Application\bin\Debug\net8.0\PMS.Domain.dll
+D:\PMS\PMS.Application\bin\Debug\net8.0\PMS.Domain.pdb
+D:\PMS\PMS.Application\obj\Debug\net8.0\PMS.Application.csproj.AssemblyReference.cache
+D:\PMS\PMS.Application\obj\Debug\net8.0\PMS.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\PMS\PMS.Application\obj\Debug\net8.0\PMS.Application.AssemblyInfoInputs.cache
+D:\PMS\PMS.Application\obj\Debug\net8.0\PMS.Application.AssemblyInfo.cs
+D:\PMS\PMS.Application\obj\Debug\net8.0\PMS.Application.csproj.CoreCompileInputs.cache
+D:\PMS\PMS.Application\obj\Debug\net8.0\PMS.Appl.9AE7850F.Up2Date
+D:\PMS\PMS.Application\obj\Debug\net8.0\PMS.Application.dll
+D:\PMS\PMS.Application\obj\Debug\net8.0\refint\PMS.Application.dll
+D:\PMS\PMS.Application\obj\Debug\net8.0\PMS.Application.pdb
+D:\PMS\PMS.Application\obj\Debug\net8.0\ref\PMS.Application.dll
