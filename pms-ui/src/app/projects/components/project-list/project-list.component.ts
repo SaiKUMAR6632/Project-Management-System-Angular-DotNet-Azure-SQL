@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../models/project.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-list',
@@ -11,7 +12,7 @@ export class ProjectListComponent implements OnInit {
   isLoading = false;
   error: string | null = null;
 
-  constructor(private projectService: ProjectService) {}
+  constructor(private projectService: ProjectService,private router: Router) {}
 
   ngOnInit(): void {
     this.loadProjects();
@@ -29,5 +30,9 @@ export class ProjectListComponent implements OnInit {
         this.isLoading = false;
       }
     });
+  }
+
+   goToProject(projectId: string) {
+    this.router.navigate(['/projects', projectId]);
   }
 }

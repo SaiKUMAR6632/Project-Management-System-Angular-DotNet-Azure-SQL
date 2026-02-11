@@ -1,0 +1,110 @@
+<div class="p-0">
+  <!-- Dialog Header -->
+  <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 rounded-t-lg">
+    <div class="flex items-center justify-between">
+      <div>
+        <h2 class="text-white text-2xl font-bold m-0">
+          <mat-icon class="align-middle mr-2 text-white">add_task</mat-icon>
+          Create New Task
+        </h2>
+        <p class="text-blue-50 mt-2 text-sm">
+          Fill in the details below to add a new task
+        </p>
+      </div>
+      <button mat-icon-button (click)="cancel()" class="!text-white">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Dialog Content -->
+  <div class="p-6 max-h-[70vh] overflow-y-auto">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-6">
+      <!-- Title Field -->
+      <mat-form-field class="w-full">
+        <mat-label>Task Title</mat-label>
+        <input 
+          matInput 
+          formControlName="title" 
+          placeholder="Enter task title"
+        />
+        <mat-icon matPrefix class="text-gray-400">title</mat-icon>
+        <mat-error *ngIf="form.get('title')?.hasError('required')">
+          Title is required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Description Field -->
+      <mat-form-field class="w-full">
+        <mat-label>Description</mat-label>
+        <textarea 
+          matInput 
+          rows="3" 
+          formControlName="description"
+          placeholder="Describe the task in detail..."
+        ></textarea>
+        <mat-icon matPrefix class="text-gray-400">description</mat-icon>
+        <mat-hint>Optional: Provide additional context</mat-hint>
+      </mat-form-field>
+
+      <!-- Status Field -->
+      <mat-form-field class="w-full">
+        <mat-label>Initial Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option [value]="statusEnum.Todo">
+            <span class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-gray-400"></span>
+              Todo
+            </span>
+          </mat-option>
+          <mat-option [value]="statusEnum.InProgress">
+            <span class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+              In Progress
+            </span>
+          </mat-option>
+          <mat-option [value]="statusEnum.Done">
+            <span class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-green-500"></span>
+              Done
+            </span>
+          </mat-option>
+        </mat-select>
+        <mat-icon matPrefix class="text-gray-400">flag</mat-icon>
+      </mat-form-field>
+
+      <!-- Action Buttons -->
+      <div class="flex gap-3 pt-4">
+        <button
+          mat-button
+          type="button"
+          class="flex-1"
+          (click)="cancel()"
+          [disabled]="isSubmitting"
+        >
+          Cancel
+        </button>
+        
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="flex-1"
+          [disabled]="form.invalid || isSubmitting"
+        >
+          <mat-progress-spinner 
+            *ngIf="isSubmitting"
+            diameter="20" 
+            mode="indeterminate"
+            class="mr-2 inline-block"
+          ></mat-progress-spinner>
+          <span *ngIf="!isSubmitting" class="flex items-center">
+            <mat-icon class="mr-2">add_circle</mat-icon>
+            Create Task
+          </span>
+          <span *ngIf="isSubmitting">Creating...</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

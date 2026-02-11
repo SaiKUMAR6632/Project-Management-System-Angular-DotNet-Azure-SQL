@@ -3,3 +3,91 @@
 @tailwind utilities;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Success Snackbar */
+.success-snackbar {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+.success-snackbar .mat-mdc-button {
+  color: white !important;
+}
+
+/* Error Snackbar */
+.error-snackbar {
+  background-color: #f44336 !important;
+  color: white !important;
+}
+
+.error-snackbar .mat-mdc-button {
+  color: white !important;
+}
+
+.task-dialog-container .mat-dialog-container {
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 640px) {
+  .task-dialog-container .mat-dialog-container {
+    max-height: 90vh;
+    margin: 16px;
+  }
+
+  /* Custom Dialog */
+.custom-dialog-container .mat-mdc-dialog-container {
+  border-radius: 16px !important;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.employee-dialog-container .mat-mdc-dialog-container {
+  border-radius: 16px !important;
+  padding: 0 !important;
+}
+
+/* Chip Styling */
+mat-chip {
+  font-size: 14px !important;
+}
+
+mat-chip button[matChipRemove] {
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+mat-chip button[matChipRemove]:hover {
+  opacity: 1;
+}
+
+}

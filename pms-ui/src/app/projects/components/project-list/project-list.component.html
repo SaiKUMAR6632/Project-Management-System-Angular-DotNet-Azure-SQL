@@ -58,7 +58,13 @@
     </mat-card-content>
 
     <mat-card-actions class="justify-end opacity-0 group-hover:opacity-100 transition">
-      <button mat-button color="primary">View</button>
+          <button
+      mat-button
+      color="primary"
+      (click)="goToProject(project.id)"
+    >
+      View
+    </button>
     </mat-card-actions>
   </mat-card>
 </div>

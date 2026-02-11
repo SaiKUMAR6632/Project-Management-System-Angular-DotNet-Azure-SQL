@@ -1,0 +1,302 @@
+<div class="min-h-screen bg-gray-50">
+  <div class="max-w-7xl mx-auto p-4 md:p-6 lg:p-8">
+    
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Dashboard</h1>
+        <p class="text-gray-600">Overview of your projects and tasks</p>
+      </div>
+      <button mat-button (click)="refresh()" [disabled]="isLoading">
+        <mat-icon>refresh</mat-icon>
+        Refresh
+      </button>
+    </div>
+
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="flex flex-col items-center justify-center py-20">
+      <mat-progress-spinner mode="indeterminate" diameter="60"></mat-progress-spinner>
+      <p class="mt-4 text-gray-500">Loading dashboard data...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error && !isLoading" class="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+      <div class="flex items-center">
+        <mat-icon class="text-red-500 mr-2">error</mat-icon>
+        <p class="text-red-700">{{ error }}</p>
+      </div>
+      <button mat-button color="warn" class="mt-2" (click)="refresh()">
+        Retry
+      </button>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div *ngIf="!isLoading && !error && stats" class="space-y-8">
+      
+      <!-- Project Statistics -->
+      <div>
+        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <mat-icon class="text-blue-600">folder</mat-icon>
+          Projects Overview
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Total Projects -->
+          <mat-card class="hover:shadow-md transition-shadow">
+            <mat-card-content class="p-6">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium mb-1">Total Projects</p>
+                  <p class="text-3xl font-bold text-gray-900">{{ stats.totalProjects || 0 }}</p>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
+                  <mat-icon class="text-blue-500">folder_open</mat-icon>
+                </div>
+              </div>
+              <mat-progress-bar 
+                mode="determinate" 
+                [value]="100"
+                class="!h-1 !rounded-full"
+              ></mat-progress-bar>
+            </mat-card-content>
+          </mat-card>
+
+          <!-- Planned Projects -->
+          <mat-card class="hover:shadow-md transition-shadow">
+            <mat-card-content class="p-6">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium mb-1">Planned</p>
+                  <p class="text-3xl font-bold text-amber-600">{{ stats.plannedProjects || 0 }}</p>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
+                  <mat-icon class="text-amber-500">pending_actions</mat-icon>
+                </div>
+              </div>
+              <mat-progress-bar 
+                mode="determinate" 
+                [value]="stats.totalProjects ? (stats.plannedProjects / stats.totalProjects * 100) : 0"
+                class="!h-1 !rounded-full"
+              ></mat-progress-bar>
+            </mat-card-content>
+          </mat-card>
+
+          <!-- Active Projects -->
+          <mat-card class="hover:shadow-md transition-shadow">
+            <mat-card-content class="p-6">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium mb-1">Active</p>
+                  <p class="text-3xl font-bold text-emerald-600">{{ stats.activeProjects || 0 }}</p>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center">
+                  <mat-icon class="text-emerald-500">play_circle</mat-icon>
+                </div>
+              </div>
+              <mat-progress-bar 
+                mode="determinate" 
+                [value]="stats.totalProjects ? (stats.activeProjects / stats.totalProjects * 100) : 0"
+                class="!h-1 !rounded-full"
+              ></mat-progress-bar>
+            </mat-card-content>
+          </mat-card>
+
+          <!-- Completed Projects -->
+          <mat-card class="hover:shadow-md transition-shadow">
+            <mat-card-content class="p-6">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium mb-1">Completed</p>
+                  <p class="text-3xl font-bold text-green-600">{{ stats.completedProjects || 0 }}</p>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center">
+                  <mat-icon class="text-green-500">check_circle</mat-icon>
+                </div>
+              </div>
+              <mat-progress-bar 
+                mode="determinate" 
+                [value]="stats.totalProjects ? (stats.completedProjects / stats.totalProjects * 100) : 0"
+                class="!h-1 !rounded-full"
+              ></mat-progress-bar>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <!-- Project Completion Progress -->
+        <mat-card class="mt-4">
+          <mat-card-content class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-sm font-semibold text-gray-700">Overall Project Completion</span>
+              <span class="text-sm font-bold text-blue-600">{{ stats.projectCompletionPercentage || 0 }}%</span>
+            </div>
+            <mat-progress-bar 
+              mode="determinate" 
+              [value]="stats.projectCompletionPercentage || 0"
+              class="!h-3 !rounded-full"
+            ></mat-progress-bar>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- Task Statistics -->
+      <div>
+        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <mat-icon class="text-blue-600">assignment</mat-icon>
+          Tasks Overview
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Total Tasks -->
+          <mat-card class="hover:shadow-md transition-shadow">
+            <mat-card-content class="p-6">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium mb-1">Total Tasks</p>
+                  <p class="text-3xl font-bold text-gray-900">{{ stats.totalTasks || 0 }}</p>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center">
+                  <mat-icon class="text-gray-500">assignment</mat-icon>
+                </div>
+              </div>
+              <mat-progress-bar 
+                mode="determinate" 
+                [value]="100"
+                class="!h-1 !rounded-full"
+              ></mat-progress-bar>
+            </mat-card-content>
+          </mat-card>
+
+          <!-- Todo Tasks -->
+          <mat-card class="hover:shadow-md transition-shadow">
+            <mat-card-content class="p-6">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium mb-1">To Do</p>
+                  <p class="text-3xl font-bold text-gray-700">{{ stats.todoTasks || 0 }}</p>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center">
+                  <mat-icon class="text-gray-500">radio_button_unchecked</mat-icon>
+                </div>
+              </div>
+              <mat-progress-bar 
+                mode="determinate" 
+                [value]="stats.totalTasks ? (stats.todoTasks / stats.totalTasks * 100) : 0"
+                class="!h-1 !rounded-full"
+              ></mat-progress-bar>
+            </mat-card-content>
+          </mat-card>
+
+          <!-- In Progress Tasks -->
+          <mat-card class="hover:shadow-md transition-shadow">
+            <mat-card-content class="p-6">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium mb-1">In Progress</p>
+                  <p class="text-3xl font-bold text-blue-600">{{ stats.inProgressTasks || 0 }}</p>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
+                  <mat-icon class="text-blue-500">pending</mat-icon>
+                </div>
+              </div>
+              <mat-progress-bar 
+                mode="determinate" 
+                [value]="stats.totalTasks ? (stats.inProgressTasks / stats.totalTasks * 100) : 0"
+                class="!h-1 !rounded-full"
+              ></mat-progress-bar>
+            </mat-card-content>
+          </mat-card>
+
+          <!-- Completed Tasks -->
+          <mat-card class="hover:shadow-md transition-shadow">
+            <mat-card-content class="p-6">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium mb-1">Completed</p>
+                  <p class="text-3xl font-bold text-emerald-600">{{ stats.completedTasks || 0 }}</p>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center">
+                  <mat-icon class="text-emerald-500">check_circle</mat-icon>
+                </div>
+              </div>
+              <mat-progress-bar 
+                mode="determinate" 
+                [value]="stats.totalTasks ? (stats.completedTasks / stats.totalTasks * 100) : 0"
+                class="!h-1 !rounded-full"
+              ></mat-progress-bar>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <!-- Task Completion Progress -->
+        <mat-card class="mt-4">
+          <mat-card-content class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-sm font-semibold text-gray-700">Overall Task Completion</span>
+              <span class="text-sm font-bold text-emerald-600">{{ stats.taskCompletionPercentage || 0 }}%</span>
+            </div>
+            <mat-progress-bar 
+              mode="determinate" 
+              [value]="stats.taskCompletionPercentage || 0"
+              class="!h-3 !rounded-full"
+              color="accent"
+            ></mat-progress-bar>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- Quick Actions -->
+      <mat-card>
+        <mat-card-content class="p-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Quick Actions</h3>
+          <div class="flex flex-wrap gap-3">
+            <button 
+              mat-raised-button 
+              color="primary"
+              routerLink="/projects/create"
+              class="!rounded-lg"
+            >
+              <mat-icon class="mr-2">add</mat-icon>
+              New Project
+            </button>
+            
+            <button 
+              mat-stroked-button
+              routerLink="/projects"
+              class="!rounded-lg"
+            >
+              <mat-icon class="mr-2">folder_open</mat-icon>
+              View All Projects
+            </button>
+
+            <button 
+              mat-stroked-button
+              routerLink="/employees"
+              class="!rounded-lg"
+            >
+              <mat-icon class="mr-2">people</mat-icon>
+              View Employees
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="!isLoading && !error && !stats" class="bg-white rounded-xl shadow-sm p-12 text-center border border-gray-100">
+      <mat-icon class="!text-6xl !w-16 !h-16 text-gray-300 mb-4">dashboard</mat-icon>
+      <h3 class="text-xl font-semibold text-gray-700 mb-2">No Data Available</h3>
+      <p class="text-gray-500 mb-4">Start by creating your first project</p>
+      <button 
+        mat-raised-button 
+        color="primary"
+        routerLink="/projects/create"
+        class="!rounded-lg"
+      >
+        <mat-icon class="mr-2">add</mat-icon>
+        Create Project
+      </button>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,188 @@
+<div class="min-h-screen bg-gray-50">
+  <div class="max-w-7xl mx-auto p-4 md:p-6 lg:p-8 space-y-6" [@fadeIn]>
+
+    <!-- Loading State -->
+    <div *ngIf="loading" class="space-y-6">
+      <div class="bg-white rounded-2xl shadow-sm p-8 animate-pulse">
+        <div class="h-8 bg-gray-200 rounded w-1/2 mb-4"></div>
+        <div class="h-4 bg-gray-200 rounded w-3/4 mb-3"></div>
+        <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+      </div>
+    </div>
+
+    <!-- Project Header -->
+    <div *ngIf="!loading && project" [@slideIn]>
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <!-- Simple Color Strip -->
+        <div class="h-1" [ngClass]="{
+            'bg-amber-400': project.status === 'Planned',
+            'bg-emerald-500': project.status === 'Active',
+            'bg-slate-400': project.status === 'Completed'
+          }"></div>
+
+        <div class="p-4 md:p-4">
+          <!-- Header Row -->
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-3">
+                <mat-icon class="text-blue-600 !text-3xl !w-8 !h-8 !leading-none">folder</mat-icon>
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 truncate">
+                  {{ project.name }}
+                </h1>
+              </div>
+
+              <p class="text-gray-600 text-base leading-relaxed mb-4">
+                {{ project.description || 'No description provided.' }}
+              </p>
+
+              <!-- Meta Info Pills -->
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium" [ngClass]="{
+                    'bg-amber-50 text-amber-700 border border-amber-200': project.status === 'Planned',
+                    'bg-emerald-50 text-emerald-700 border border-emerald-200': project.status === 'Active',
+                    'bg-slate-50 text-slate-700 border border-slate-200': project.status === 'Completed'
+                  }">
+                  <mat-icon class="!text-base !w-4 !h-4 !leading-none">flag</mat-icon>
+                  {{ project.status }}
+                </span>
+
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium border border-gray-200">
+                  <mat-icon class="!text-base !w-4 !h-4 !leading-none">calendar_today</mat-icon>
+                  {{ project.createdAt | date:'MMM d, yyyy' }}
+                </span>
+
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium border border-gray-200">
+                  <mat-icon class="!text-base !w-4 !h-4 !leading-none">assignment</mat-icon>
+                  {{ taskList?.tasks?.length || 0 }} {{ (taskList?.tasks?.length || 0) === 1 ? 'Task' : 'Tasks' }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Action Button (Desktop) -->
+            <button mat-raised-button color="primary" (click)="openTaskDialog()"
+              class="hidden md:flex !rounded-xl !px-5 !py-2.5 !shadow-sm hover:!shadow-md transition-all">
+              <mat-icon class="!text-xl !w-5 !h-5 mr-2 !leading-none">add</mat-icon>
+              New Task
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Overview -->
+    <div *ngIf="!loading && project" class="grid grid-cols-1 sm:grid-cols-3 gap-4" [@listAnimation]>
+      <!-- Todo Stats -->
+      <div class="bg-white rounded-xl shadow-sm px-5 py-3 border border-gray-100 hover:shadow-md transition-shadow">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs text-gray-500 font-medium mb-0.5">To Do</p>
+            <p class="text-2xl font-bold text-gray-900">
+              {{ getTaskCountByStatus('Todo') }}
+            </p>
+          </div>
+          <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center">
+            <mat-icon class="!text-xl text-gray-400">radio_button_unchecked</mat-icon>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- In Progress Stats -->
+      <div class="bg-white rounded-xl shadow-sm px-5 py-3 border border-gray-100 hover:shadow-md transition-shadow">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs text-gray-500 font-medium mb-0.5">In Progress</p>
+            <p class="text-2xl font-bold text-blue-600">
+              {{ getTaskCountByStatus('InProgress') }}
+            </p>
+          </div>
+          <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center">
+            <mat-icon class="!text-xl text-blue-500">pending</mat-icon>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Completed Stats -->
+      <div class="bg-white rounded-xl shadow-sm px-5 py-3 border border-gray-100 hover:shadow-md transition-shadow">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs text-gray-500 font-medium mb-0.5">Completed</p>
+            <p class="text-2xl font-bold text-emerald-600">
+              {{ getTaskCountByStatus('Done') }}
+            </p>
+          </div>
+          <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center">
+            <mat-icon class="!text-xl text-emerald-500">check_circle</mat-icon>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Employee Allocation Section -->
+    <div *ngIf="!loading && project" class="bg-white rounded-2xl shadow-sm overflow-hidden" [@slideIn]>
+      <div class="p-6">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
+              <mat-icon class="text-blue-600 !text-xl">people</mat-icon>
+            </div>
+            <div>
+              <h2 class="text-lg font-bold text-gray-900">Team Members</h2>
+              <p class="text-xs text-gray-500">{{ selectedEmployees.length }} employee(s) assigned</p>
+            </div>
+          </div>
+          <button mat-raised-button color="primary" (click)="openEmployeeDialog()" class="!rounded-xl !px-4 !py-2">
+            <mat-icon class="!text-lg mr-1 !leading-none">add</mat-icon>
+            Add Members
+          </button>
+        </div>
+
+        <!-- Selected Employees as Chips -->
+        <div *ngIf="selectedEmployees.length > 0" class="space-y-4">
+          <mat-chip-set aria-label="Selected employees">
+            <mat-chip *ngFor="let empId of selectedEmployees"
+              class="!bg-blue-50 !text-blue-700 !border !border-blue-200" [removable]="true"
+              (removed)="removeEmployee(empId)">
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-7 h-7 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center text-xs font-bold">
+                  {{ getEmployeeName(empId).charAt(0) }}
+                </div>
+                <span class="font-medium">{{ getEmployeeName(empId) }}</span>
+              </div>
+              <button matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip>
+          </mat-chip-set>
+        </div>
+
+        <!-- Empty State -->
+        <div *ngIf="selectedEmployees.length === 0"
+          class="text-center py-12 bg-gray-50 rounded-xl border-2 border-dashed border-gray-200">
+          <mat-icon class="!text-5xl text-gray-300 mb-3">person_add</mat-icon>
+          <p class="text-gray-600 font-medium mb-1">No team members assigned yet</p>
+          <p class="text-gray-400 text-sm">Click "Add Members" to assign employees to this project</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task List -->
+    <div [@slideIn]>
+      <app-task-list [projectId]="projectId" #taskList></app-task-list>
+    </div>
+
+    <!-- Floating Action Button (Mobile) -->
+    <button *ngIf="!loading" mat-fab color="primary" (click)="openTaskDialog()"
+      class="!fixed !bottom-6 !right-6 md:!hidden !shadow-lg hover:!shadow-xl transition-all z-50" [@cardHover]
+      aria-label="Create new task">
+      <mat-icon>add</mat-icon>
+    </button>
+
+  </div>
+</div>

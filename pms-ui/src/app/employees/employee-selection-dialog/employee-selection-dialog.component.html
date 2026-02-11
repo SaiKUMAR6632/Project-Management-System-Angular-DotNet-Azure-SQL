@@ -1,0 +1,94 @@
+<div class="dialog-container">
+  <!-- Header -->
+  <div class="px-6 py-4 border-b border-gray-200">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
+          <mat-icon class="text-blue-600 !text-xl">people</mat-icon>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-gray-900">Select Team Members</h2>
+          <p class="text-sm text-gray-500">{{ selectedEmployees.length }} selected</p>
+        </div>
+      </div>
+      <button mat-icon-button (click)="onCancel()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="px-6 py-4 bg-gray-50">
+    <mat-form-field class="w-full">
+      <mat-label>Search employees</mat-label>
+      <input matInput [(ngModel)]="searchText" placeholder="Search by name or email">
+      <mat-icon matPrefix class="text-gray-400">search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <!-- Employee List -->
+  <div class="px-6 py-4 max-h-96 overflow-y-auto">
+    <div class="space-y-2">
+      <div 
+        *ngFor="let emp of filteredEmployees()"
+        class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-all cursor-pointer border border-transparent"
+        [class.border-blue-200]="isSelected(emp.id)"
+        [class.bg-blue-50]="isSelected(emp.id)"
+        (click)="toggleEmployee(emp.id)"
+      >
+        <div class="flex items-center gap-3 flex-1">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center font-bold">
+            {{ emp.fullName.charAt(0) }}
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-medium text-gray-900">{{ emp.fullName }}</p>
+            <p class="text-sm text-gray-500 truncate">{{ emp.email }}</p>
+            <p class="text-xs text-gray-400" *ngIf="emp.designation">{{ emp.designation }}</p>
+          </div>
+        </div>
+        
+        <mat-checkbox 
+          [checked]="isSelected(emp.id)"
+          (click)="$event.stopPropagation()"
+          (change)="toggleEmployee(emp.id)"
+          color="primary"
+        ></mat-checkbox>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="filteredEmployees().length === 0" class="text-center py-12">
+      <mat-icon class="!text-5xl text-gray-300 mb-3">search_off</mat-icon>
+      <p class="text-gray-500 font-medium">No employees found</p>
+      <p class="text-gray-400 text-sm">Try a different search term</p>
+    </div>
+  </div>
+
+  <!-- Footer Actions -->
+  <div class="px-6 py-4 bg-gray-50 border-t border-gray-200">
+    <div class="flex items-center justify-between gap-3">
+      <p class="text-sm text-gray-600">
+        {{ selectedEmployees.length }} of {{ data.employees.length }} selected
+      </p>
+      <div class="flex gap-2">
+        <button 
+          mat-stroked-button
+          (click)="onCancel()"
+          class="!rounded-lg"
+        >
+          Cancel
+        </button>
+        <button 
+          mat-raised-button 
+          color="primary"
+          (click)="onSave()"
+          [disabled]="selectedEmployees.length === 0"
+          class="!rounded-lg !px-6"
+        >
+          <mat-icon class="!text-lg mr-1 !leading-none">check</mat-icon>
+          Save Selection
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

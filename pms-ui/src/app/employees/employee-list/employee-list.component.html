@@ -1,0 +1,102 @@
+<div class="max-w-6xl mx-auto p-6 space-y-6">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center">
+        <div>
+            <h1 class="text-3xl font-bold text-gray-800">Employees</h1>
+            <p class="text-sm text-gray-500 mt-1">
+                Manage your organization's employees
+            </p>
+        </div>
+
+        <button mat-raised-button color="primary" (click)="createEmployee()"
+            class="!rounded-lg !px-5 !py-2.5 shadow-md hover:shadow-lg transition">
+            <mat-icon class="mr-2">person_add</mat-icon>
+            Add Employee
+        </button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="flex flex-col items-center justify-center py-12">
+        <mat-progress-spinner diameter="50" mode="indeterminate"></mat-progress-spinner>
+        <p class="mt-4 text-gray-500">Loading employees...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error && !isLoading" class="bg-red-50 border border-red-200 rounded-lg p-4">
+        <div class="flex items-center">
+            <mat-icon class="text-red-500 mr-2">error</mat-icon>
+            <p class="text-red-700">{{ error }}</p>
+        </div>
+        <button mat-button color="warn" class="mt-2" (click)="loadEmployees()">
+            Retry
+        </button>
+    </div>
+
+    <!-- Employees Grid -->
+    <div *ngIf="!isLoading && !error" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <mat-card *ngFor="let emp of employees" class="group hover:shadow-xl transition-shadow duration-300">
+            <mat-card-header class="pb-3">
+                <mat-card-title class="text-lg font-semibold text-gray-800">
+                    {{ emp.fullName }}
+                </mat-card-title>
+                <mat-card-subtitle class="text-gray-500">
+                    {{ emp.designation }}
+                </mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content class="space-y-3">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2.5 text-sm text-gray-600">
+                        <mat-icon class="!w-5 !h-5 !text-[20px] text-gray-400 flex-shrink-0">business</mat-icon>
+                        <span class="truncate">{{ emp.department }}</span>
+                    </div>
+
+                    <div class="flex items-center gap-2.5 text-sm text-gray-600">
+                        <mat-icon class="!w-5 !h-5 !text-[20px] text-gray-400 flex-shrink-0">email</mat-icon>
+                        <a [href]="'mailto:' + emp.email"
+                            class="text-blue-500 hover:text-blue-600 hover:underline truncate" [title]="emp.email">
+                            {{ emp.email }}
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-2.5 text-sm text-gray-500">
+                        <mat-icon class="!w-5 !h-5 !text-[20px] text-gray-400 flex-shrink-0">calendar_today</mat-icon>
+                        <span>Joined {{ emp.createdAt | date:'MMM d, yyyy' }}</span>
+                    </div>
+                </div>
+            </mat-card-content>
+
+            <mat-card-actions class="pt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div class="flex gap-2 w-full">
+                    <button mat-button color="primary" (click)="editEmployee(emp.id)" class="flex-1">
+                        <mat-icon class="mr-1">edit</mat-icon>
+                        Edit
+                    </button>
+                    <button mat-stroked-button color="warn" (click)="deleteEmployee(emp.id)" class="flex-1">
+                        <mat-icon class="mr-1">delete</mat-icon>
+                        Delete
+                    </button>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="!isLoading && !error && employees.length === 0" class="text-center py-12">
+        <mat-icon class="text-gray-300 !w-20 !h-20 !text-[80px] mb-4">
+            people
+        </mat-icon>
+        <h3 class="text-xl font-semibold text-gray-600 mb-2">No employees yet</h3>
+        <p class="text-gray-500 mb-6">
+            Start by adding your first employee to the system
+        </p>
+        <button mat-raised-button color="primary" (click)="createEmployee()">
+            <mat-icon class="mr-2">person_add</mat-icon>
+            Add First Employee
+        </button>
+    </div>
+
+</div>

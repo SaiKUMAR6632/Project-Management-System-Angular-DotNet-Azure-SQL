@@ -1,0 +1,437 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\PMS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B5F473F0-2442-48B5-AE52-36BF36A243B4}|PMS.API\\PMS.API.csproj|d:\\pms\\pms.api\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5F473F0-2442-48B5-AE52-36BF36A243B4}|PMS.API\\PMS.API.csproj|solutionrelative:pms.api\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5F473F0-2442-48B5-AE52-36BF36A243B4}|PMS.API\\PMS.API.csproj|d:\\pms\\pms.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5F473F0-2442-48B5-AE52-36BF36A243B4}|PMS.API\\PMS.API.csproj|solutionrelative:pms.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E46E51-F4D4-4B72-B496-08406B4D65E6}|PMS.Application\\PMS.Application.csproj|d:\\pms\\pms.application\\dtos\\auth\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52E46E51-F4D4-4B72-B496-08406B4D65E6}|PMS.Application\\PMS.Application.csproj|solutionrelative:pms.application\\dtos\\auth\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5F473F0-2442-48B5-AE52-36BF36A243B4}|PMS.API\\PMS.API.csproj|d:\\pms\\pms.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B5F473F0-2442-48B5-AE52-36BF36A243B4}|PMS.API\\PMS.API.csproj|solutionrelative:pms.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5F473F0-2442-48B5-AE52-36BF36A243B4}|PMS.API\\PMS.API.csproj|d:\\pms\\pms.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5F473F0-2442-48B5-AE52-36BF36A243B4}|PMS.API\\PMS.API.csproj|solutionrelative:pms.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E46E51-F4D4-4B72-B496-08406B4D65E6}|PMS.Application\\PMS.Application.csproj|d:\\pms\\pms.application\\dtos\\auth\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52E46E51-F4D4-4B72-B496-08406B4D65E6}|PMS.Application\\PMS.Application.csproj|solutionrelative:pms.application\\dtos\\auth\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{317A5F83-DD82-4151-9A59-656E27A1FC74}|PMS.Domain\\PMS.Domain.csproj|d:\\pms\\pms.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{317A5F83-DD82-4151-9A59-656E27A1FC74}|PMS.Domain\\PMS.Domain.csproj|solutionrelative:pms.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5F473F0-2442-48B5-AE52-36BF36A243B4}|PMS.API\\PMS.API.csproj|d:\\pms\\pms.api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5F473F0-2442-48B5-AE52-36BF36A243B4}|PMS.API\\PMS.API.csproj|solutionrelative:pms.api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E46E51-F4D4-4B72-B496-08406B4D65E6}|PMS.Application\\PMS.Application.csproj|d:\\pms\\pms.application\\dtos\\auth\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52E46E51-F4D4-4B72-B496-08406B4D65E6}|PMS.Application\\PMS.Application.csproj|solutionrelative:pms.application\\dtos\\auth\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6878B69-07D0-4B60-8309-C7FF5F66430F}|PMS.Infrastructure\\PMS.Infrastructure.csproj|d:\\pms\\pms.infrastructure\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6878B69-07D0-4B60-8309-C7FF5F66430F}|PMS.Infrastructure\\PMS.Infrastructure.csproj|solutionrelative:pms.infrastructure\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{317A5F83-DD82-4151-9A59-656E27A1FC74}|PMS.Domain\\PMS.Domain.csproj|d:\\pms\\pms.domain\\entities\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{317A5F83-DD82-4151-9A59-656E27A1FC74}|PMS.Domain\\PMS.Domain.csproj|solutionrelative:pms.domain\\entities\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6878B69-07D0-4B60-8309-C7FF5F66430F}|PMS.Infrastructure\\PMS.Infrastructure.csproj|d:\\pms\\pms.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6878B69-07D0-4B60-8309-C7FF5F66430F}|PMS.Infrastructure\\PMS.Infrastructure.csproj|solutionrelative:pms.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E46E51-F4D4-4B72-B496-08406B4D65E6}|PMS.Application\\PMS.Application.csproj|d:\\pms\\pms.application\\dtos\\projects\\projectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52E46E51-F4D4-4B72-B496-08406B4D65E6}|PMS.Application\\PMS.Application.csproj|solutionrelative:pms.application\\dtos\\projects\\projectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E46E51-F4D4-4B72-B496-08406B4D65E6}|PMS.Application\\PMS.Application.csproj|d:\\pms\\pms.application\\dtos\\projects\\createprojectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52E46E51-F4D4-4B72-B496-08406B4D65E6}|PMS.Application\\PMS.Application.csproj|solutionrelative:pms.application\\dtos\\projects\\createprojectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{317A5F83-DD82-4151-9A59-656E27A1FC74}|PMS.Domain\\PMS.Domain.csproj|d:\\pms\\pms.domain\\pms.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{317A5F83-DD82-4151-9A59-656E27A1FC74}|PMS.Domain\\PMS.Domain.csproj|solutionrelative:pms.domain\\pms.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 45,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:158:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:162:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:163:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:164:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:166:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:167:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:168:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:142:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:144:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:146:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:145:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:147:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:149:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:150:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:151:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:152:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:153:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:154:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:155:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:156:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:148:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:169:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:157:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:159:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:160:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:161:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:165:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.API\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "PMS.API\\Controllers\\BaseController.cs",
+              "ToolTip": "D:\\PMS\\PMS.API\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "PMS.API\\Controllers\\BaseController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T07:42:48.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterRequestDto.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.Application\\DTOs\\Auth\\RegisterRequestDto.cs",
+              "RelativeDocumentMoniker": "PMS.Application\\DTOs\\Auth\\RegisterRequestDto.cs",
+              "ToolTip": "D:\\PMS\\PMS.Application\\DTOs\\Auth\\RegisterRequestDto.cs",
+              "RelativeToolTip": "PMS.Application\\DTOs\\Auth\\RegisterRequestDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T07:42:27.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProjectDto.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.Application\\DTOs\\Projects\\ProjectDto.cs",
+              "RelativeDocumentMoniker": "PMS.Application\\DTOs\\Projects\\ProjectDto.cs",
+              "ToolTip": "D:\\PMS\\PMS.Application\\DTOs\\Projects\\ProjectDto.cs",
+              "RelativeToolTip": "PMS.Application\\DTOs\\Projects\\ProjectDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T12:07:01.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CreateProjectDto.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.Application\\DTOs\\Projects\\CreateProjectDto.cs",
+              "RelativeDocumentMoniker": "PMS.Application\\DTOs\\Projects\\CreateProjectDto.cs",
+              "ToolTip": "D:\\PMS\\PMS.Application\\DTOs\\Projects\\CreateProjectDto.cs",
+              "RelativeToolTip": "PMS.Application\\DTOs\\Projects\\CreateProjectDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T12:05:28.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Project.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.Domain\\Entities\\Project.cs",
+              "RelativeDocumentMoniker": "PMS.Domain\\Entities\\Project.cs",
+              "ToolTip": "D:\\PMS\\PMS.Domain\\Entities\\Project.cs",
+              "RelativeToolTip": "PMS.Domain\\Entities\\Project.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T12:04:30.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProjectsController.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.API\\Controllers\\ProjectsController.cs",
+              "RelativeDocumentMoniker": "PMS.API\\Controllers\\ProjectsController.cs",
+              "ToolTip": "D:\\PMS\\PMS.API\\Controllers\\ProjectsController.cs",
+              "RelativeToolTip": "PMS.API\\Controllers\\ProjectsController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T10:05:22.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.API\\Program.cs",
+              "RelativeDocumentMoniker": "PMS.API\\Program.cs",
+              "ToolTip": "D:\\PMS\\PMS.API\\Program.cs",
+              "RelativeToolTip": "PMS.API\\Program.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAmwFwAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T10:23:13.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "PMS.API\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\PMS\\PMS.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "PMS.API\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAwEkAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T07:15:42.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginRequestDto.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.Application\\DTOs\\Auth\\LoginRequestDto.cs",
+              "RelativeDocumentMoniker": "PMS.Application\\DTOs\\Auth\\LoginRequestDto.cs",
+              "ToolTip": "D:\\PMS\\PMS.Application\\DTOs\\Auth\\LoginRequestDto.cs",
+              "RelativeToolTip": "PMS.Application\\DTOs\\Auth\\LoginRequestDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T07:14:56.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthResponseDto.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.Application\\DTOs\\Auth\\AuthResponseDto.cs",
+              "RelativeDocumentMoniker": "PMS.Application\\DTOs\\Auth\\AuthResponseDto.cs",
+              "ToolTip": "D:\\PMS\\PMS.Application\\DTOs\\Auth\\AuthResponseDto.cs",
+              "RelativeToolTip": "PMS.Application\\DTOs\\Auth\\AuthResponseDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T07:14:17.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.Infrastructure\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "PMS.Infrastructure\\Services\\TokenService.cs",
+              "ToolTip": "D:\\PMS\\PMS.Infrastructure\\Services\\TokenService.cs",
+              "RelativeToolTip": "PMS.Infrastructure\\Services\\TokenService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAiwB8AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T06:55:46.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "PMS.Infrastructure\\Persistence\\AppDbContext.cs",
+              "ToolTip": "D:\\PMS\\PMS.Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeToolTip": "PMS.Infrastructure\\Persistence\\AppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T06:53:13.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\PMS\\PMS.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "PMS.Domain\\Entities\\User.cs",
+              "ToolTip": "D:\\PMS\\PMS.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "PMS.Domain\\Entities\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T06:49:55.261Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PMS.Domain.csproj",
+              "DocumentMoniker": "D:\\PMS\\PMS.Domain\\PMS.Domain.csproj",
+              "RelativeDocumentMoniker": "PMS.Domain\\PMS.Domain.csproj",
+              "ToolTip": "D:\\PMS\\PMS.Domain\\PMS.Domain.csproj",
+              "RelativeToolTip": "PMS.Domain\\PMS.Domain.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-29T06:49:30.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\PMS\\PMS.API\\appsettings.json",
+              "RelativeDocumentMoniker": "PMS.API\\appsettings.json",
+              "ToolTip": "D:\\PMS\\PMS.API\\appsettings.json",
+              "RelativeToolTip": "PMS.API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-29T06:46:12.783Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1168,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

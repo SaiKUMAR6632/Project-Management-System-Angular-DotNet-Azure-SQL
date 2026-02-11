@@ -1,35 +1,37 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// Components
 import { ProjectCreateComponent } from './components/project-create/project-create.component';
 import { ProjectListComponent } from './components/project-list/project-list.component';
-import { ProjectsRoutingModule } from './project-routing.module';
-import { FormsModule } from '@angular/forms';
-import { MatCardActions, MatCardContent, MatCard, MatCardTitle, MatCardSubtitle, MatCardHeader } from "@angular/material/card";
-import { MatProgressSpinner } from "@angular/material/progress-spinner";
-import { MatIconModule } from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { ProjectDetailsComponent } from './components/project-details/project-details.component';
+
+// Routing
+import { ProjectsRoutingModule } from './../projects/project-routing.module';
+
+// Shared Material Module
+import { MaterialModule } from '../shared/material.module';
+import { SharedModule } from '../shared/shared.module';
+import { EmployeeSelectionDialogComponent } from '../employees/employee-selection-dialog/employee-selection-dialog.component';
+
 
 @NgModule({
-  declarations: [ProjectListComponent,ProjectCreateComponent],
+  declarations: [
+    ProjectListComponent,
+    ProjectCreateComponent,
+    ProjectDetailsComponent,
+    EmployeeSelectionDialogComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
     ProjectsRoutingModule,
     FormsModule,
-    MatCardActions,
-    MatCardContent,
-    MatCard,
-    MatCardTitle,
-    MatCardSubtitle,
-    MatCardHeader,
-    MatProgressSpinner,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule
-]
+    ReactiveFormsModule,
+    MaterialModule,
+    SharedModule
+  ]
 })
 export class ProjectsModule {}

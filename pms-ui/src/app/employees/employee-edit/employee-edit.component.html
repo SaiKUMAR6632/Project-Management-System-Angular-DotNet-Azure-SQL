@@ -1,0 +1,135 @@
+<div class="max-w-2xl mx-auto p-6">
+  <mat-card class="!shadow-lg">
+    <mat-card-header class="bg-gradient-to-r from-blue-500 to-blue-600 -m-4 mb-6 p-6 rounded-t-lg">
+      <mat-card-title class="!text-white !text-2xl !font-bold !m-0">
+        <mat-icon class="align-middle mr-2">edit</mat-icon>
+        Edit Employee
+      </mat-card-title>
+      <mat-card-subtitle class="!text-blue-50 !mt-2">
+        Update employee information
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="pt-6">
+      <!-- Loading State -->
+      <div *ngIf="isLoading" class="flex flex-col items-center justify-center py-12">
+        <mat-progress-spinner diameter="50" mode="indeterminate"></mat-progress-spinner>
+        <p class="mt-4 text-gray-500">Loading employee details...</p>
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="error && !isLoading" class="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+        <div class="flex items-center">
+          <mat-icon class="text-red-500 mr-2">error</mat-icon>
+          <p class="text-red-700">{{ error }}</p>
+        </div>
+        <button 
+          mat-button 
+          color="warn" 
+          class="mt-2"
+          (click)="loadEmployee()"
+        >
+          Retry
+        </button>
+      </div>
+
+      <form *ngIf="!isLoading" [formGroup]="form" (ngSubmit)="submit()" class="space-y-6">
+        <!-- Full Name -->
+        <mat-form-field class="w-full">
+          <mat-label>Full Name</mat-label>
+          <input 
+            matInput 
+            formControlName="fullName" 
+            placeholder="Enter employee's full name"
+          />
+          <mat-icon matPrefix class="text-gray-400">person</mat-icon>
+          <mat-error *ngIf="form.get('fullName')?.hasError('required')">
+            Full name is required
+          </mat-error>
+          <mat-error *ngIf="form.get('fullName')?.hasError('minlength')">
+            Name must be at least 2 characters
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field class="w-full">
+          <mat-label>Email Address</mat-label>
+          <input 
+            matInput 
+            type="email"
+            formControlName="email" 
+            placeholder="Enter email address"
+          />
+          <mat-icon matPrefix class="text-gray-400">email</mat-icon>
+          <mat-error *ngIf="form.get('email')?.hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="form.get('email')?.hasError('email')">
+            Please enter a valid email
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Designation -->
+        <mat-form-field class="w-full">
+          <mat-label>Designation</mat-label>
+          <input 
+            matInput 
+            formControlName="designation" 
+            placeholder="e.g., Software Engineer, Project Manager"
+          />
+          <mat-icon matPrefix class="text-gray-400">work</mat-icon>
+          <mat-error *ngIf="form.get('designation')?.hasError('required')">
+            Designation is required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Department -->
+        <mat-form-field class="w-full">
+          <mat-label>Department</mat-label>
+          <input 
+            matInput 
+            formControlName="department" 
+            placeholder="e.g., Engineering, Marketing, HR"
+          />
+          <mat-icon matPrefix class="text-gray-400">business</mat-icon>
+          <mat-error *ngIf="form.get('department')?.hasError('required')">
+            Department is required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Action Buttons -->
+        <div class="flex gap-3 pt-4">
+          <button
+            mat-stroked-button
+            type="button"
+            class="flex-1 !py-3"
+            (click)="cancel()"
+            [disabled]="isSubmitting"
+          >
+            Cancel
+          </button>
+          
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            class="flex-1 !py-3"
+            [disabled]="form.invalid || isSubmitting"
+          >
+            <mat-progress-spinner 
+              *ngIf="isSubmitting"
+              diameter="20" 
+              mode="indeterminate"
+              class="mr-2 inline-block"
+            ></mat-progress-spinner>
+            <span *ngIf="!isSubmitting" class="flex items-center justify-center">
+              <mat-icon class="mr-2">save</mat-icon>
+              Update Employee
+            </span>
+            <span *ngIf="isSubmitting">Updating...</span>
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
