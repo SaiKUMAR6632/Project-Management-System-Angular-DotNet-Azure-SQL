@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TaskService } from '../services/task.service';
 import { TaskStatusOfProject } from '../models/task-status.enum';
+import { Employee } from 'src/app/employees/models/employee.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-task-form-dialog',
@@ -12,13 +14,16 @@ export class TaskFormDialogComponent implements OnInit {
   form: FormGroup;
   statusEnum = TaskStatusOfProject;
   isSubmitting = false;
+  projectEmployees:Employee[] = [];
 
   constructor(
     private fb: FormBuilder,
     private taskService: TaskService,
+    private snackBar: MatSnackBar,
     private dialogRef: MatDialogRef<TaskFormDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { projectId: string }
+    @Inject(MAT_DIALOG_DATA) public data: { projectId: string,projectEmployees?: Employee[] }
   ) {
+    this.projectEmployees = this.data.projectEmployees || [];
     this.form = this.fb.group({
       title: ['', [Validators.required, Validators.maxLength(200)]],
       description: ['', [Validators.maxLength(1000)]],

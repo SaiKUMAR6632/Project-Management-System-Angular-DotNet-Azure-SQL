@@ -29,6 +29,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatProgressBar} from '@angular/material/progress-bar';
+import { MatChip } from '@angular/material/chips';
 
 const materialModules = [
   MatCardModule,
@@ -58,7 +59,8 @@ const materialModules = [
   MatStepperModule,
   MatExpansionModule,
   MatTabsModule,
-  MatProgressBar
+  MatProgressBar,
+  MatChip
 ];
 
 @NgModule({

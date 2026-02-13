@@ -73,6 +73,41 @@
         <mat-icon matPrefix class="text-gray-400">flag</mat-icon>
       </mat-form-field>
 
+      <!-- ✨ NEW: Assigned Employee Field -->
+      <mat-form-field class="w-full" *ngIf="projectEmployees.length > 0">
+        <mat-label>Assign To</mat-label>
+        <mat-select formControlName="assignedEmployeeId">
+          <mat-option [value]="null">
+            <span class="flex items-center gap-2 text-gray-500">
+              <mat-icon class="!text-base">person_off</mat-icon>
+              Not Assigned
+            </span>
+          </mat-option>
+          <mat-option *ngFor="let employee of projectEmployees" [value]="employee.id">
+            <span class="flex items-center gap-2">
+              <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-600">
+                {{ employee.fullName.charAt(0) || 'U' }}
+              </div>
+              <span>{{ employee.fullName }}</span>
+              <span class="text-xs text-gray-500 ml-auto">{{ employee.designation || '' }}</span>
+            </span>
+          </mat-option>
+        </mat-select>
+        <mat-icon matPrefix class="text-gray-400">person</mat-icon>
+        <mat-hint>Assign this task to a team member</mat-hint>
+      </mat-form-field>
+
+      <!-- ✨ NEW: Warning Message when no employees are assigned to project -->
+      <div *ngIf="projectEmployees.length === 0" class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-2">
+        <div class="flex items-center gap-3">
+          <mat-icon class="text-yellow-600">warning</mat-icon>
+          <div>
+            <p class="text-sm font-medium text-yellow-800">No employees assigned to this project</p>
+            <p class="text-sm text-yellow-600">Please assign employees to the project first.</p>
+          </div>
+        </div>
+      </div>
+
       <!-- Action Buttons -->
       <div class="flex gap-3 pt-4">
         <button

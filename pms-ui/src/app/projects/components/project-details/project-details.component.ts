@@ -128,8 +128,23 @@ export class ProjectDetailsComponent implements OnInit {
     
     if (!confirmRemove) return;
 
+    const previousEmployees = [...this.selectedEmployees];
     this.selectedEmployees = this.selectedEmployees.filter(id => id !== empId);
-    this.saveEmployees();
+
+    this.projectService.removeEmployeeFromProject(this.projectId, empId).subscribe({
+      next: () => {
+          this.saveEmployees();
+          console.log(`Employee with ID ${empId} removed from project ${this.projectId}`);
+      },
+      error:(error)=>{
+        this.selectedEmployees = previousEmployees; 
+        console.log('Error remvoing employee:', error);
+        this.snackBar.open('Failed to remove employee from project', 'Close', {
+          duration: 3000,
+          panelClass: ['error-snackbar']
+        });
+      }
+    });
   }
 
   openTaskDialog(): void {
@@ -137,7 +152,9 @@ export class ProjectDetailsComponent implements OnInit {
       width: '600px',
       maxWidth: '90vw',
       maxHeight: '90vh',
-      data: { projectId: this.projectId },
+      data: { projectId: this.projectId,
+        projectEmployees:this.projectService.getProjectEmployees(this.projectId)
+       },
       panelClass: 'task-dialog-container'
     });
 

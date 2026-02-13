@@ -6,11 +6,13 @@ import { TaskListComponent } from '../tasks/task-list/task-list.component';
 import { TaskFormDialogComponent } from '../tasks/task-form-dialog/task-form-dialog.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { EmployeeSelectionDialogComponent } from '../employees/employee-selection-dialog/employee-selection-dialog.component';
+import {TaskDetailsDialogComponent} from '../../../src/app/tasks/task-details-dialog/task-details-dialog.component';
 
 @NgModule({
   declarations: [
     TaskListComponent,
-    TaskFormDialogComponent
+    TaskFormDialogComponent,
+    TaskDetailsDialogComponent
   ],
   imports: [
     CommonModule,
@@ -21,6 +23,7 @@ import { EmployeeSelectionDialogComponent } from '../employees/employee-selectio
   exports: [
     TaskListComponent,
     TaskFormDialogComponent,
+    TaskDetailsDialogComponent,
     CommonModule,
     ReactiveFormsModule,
     MaterialModule

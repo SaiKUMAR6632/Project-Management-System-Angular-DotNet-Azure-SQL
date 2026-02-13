@@ -7,4 +7,8 @@ export interface Task {
   description?: string;
   status: TaskStatusOfProject;
   createdAt: string;
+  updatedAt?: string;
+
+  assignedEmployeeId?: string | null;
+  assignedEmployeeName?: string;
 }
